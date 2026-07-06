@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<EMPDETAILS>
+    <EMPLOYEE EID="EMP001">
+        <NAME>Alexander Hunold</NAME>
+
+        <ADDRESS>
+            <PERMANENT>Hyderabad</PERMANENT>
+            <TEMPORARY>Bengaluru</TEMPORARY>
+        </ADDRESS>
+
+        <MOBILE>9123456789</MOBILE>
+
+        <SALARY>9190000</SALARY>
+    </EMPLOYEE>
+</EMPDETAILS>

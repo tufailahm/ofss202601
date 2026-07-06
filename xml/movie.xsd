@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<xsd:schema
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="MOVIEDETAILS" type="mdType" />
+	<xsd:complexType name="mdType">
+		<xsd:sequence>
+					<xsd:element name="MOVIE" type="mvType" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="mvType">
+		<xsd:sequence>
+					<xsd:element name="NAME" type="xsd:string" />
+					<xsd:element name="ID" type="xsd:string" />
+					<xsd:element name="AMOUNT" type="amType" />
+					<xsd:element name="RATING" type="xsd:string" />
+					<xsd:element name="EMAIL" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+			<xsd:complexType name="amType">
+		<xsd:sequence>
+					<xsd:element name="PROFIT" type="xsd:int" />
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>	

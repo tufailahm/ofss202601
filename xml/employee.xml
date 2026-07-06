@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employees [
+	<!ELEMENT employees (employee+)>
+	<!ELEMENT employee (employee_id, last_name)>
+	<!ATTLIST employee manager_id CDATA #IMPLIED
+             	      department_id (10|60|90) '90' >
+	<!ELEMENT employee_id (#PCDATA )>
+	<!ELEMENT last_name (#PCDATA )>
+]>
+
+<employees xmlns:emp="urn:hr:employee-ns">
+  <employee>
+	<emp:name>Neha</name>
+    <employee_id>100</employee_id>
+    <last_name> king</last_name>
+	<departments>
+		<dept:name>HR</name>
+	</departments>
+  </employee>
+</employees>
