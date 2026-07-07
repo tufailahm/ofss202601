@@ -440,7 +440,8 @@ https://www.eclipse.org/downloads/download.php?file=/oomph/epp/2026-06/R/eclipse
 
 
 
-
+Supplier	- S#, status, city
+Supplier Parts - s#, p#, qty,pname
 
 
 
@@ -475,6 +476,15 @@ Normalization
 
 
 
+Hands - on
+
+1. Get the name and salary of the employee who is getting the second highest salary.
+
+select first_name,salary from employees order by salary desc OFFSET 1 ROW 
+FETCH 1 ROW
+
+2. Get the names and salaries of the top 5 highest-paid employees.
+3. Get the employee who is getting the lowest salary.
 
 
 
