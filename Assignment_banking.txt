@@ -1,7 +1,3 @@
-https://github.com/tufailahm/ofss202501/blob/master/hr/banking_script.sql
-banking_script.sql
-
-
 Handson
 
 Performs querying on this:
