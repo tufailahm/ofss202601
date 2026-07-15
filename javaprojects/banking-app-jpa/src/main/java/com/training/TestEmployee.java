@@ -8,13 +8,9 @@ import com.training.alstrom.util.EntityManagerUtil;
 
 public class TestEmployee {
 
-	public TestEmployee() {
-		// TODO Auto-generated constructor stub
-	}
-
 	public static void main(String[] args) {
 		EntityManager em = EntityManagerUtil.getEntityManager();
-		
+		 
 		Contract_Employee emp = new Contract_Employee();
 		emp.setId(22);
 		emp.setName("Sathvik");
