@@ -11,6 +11,8 @@ public interface CustomerDAO {
 	public void updateCustomer(int oldCustomerId,String newMobileNumber,int newBalance);
 	public List<Customer> getCustomer();
 	public Customer getCustomer(int customerId);
+	public Customer getCustomerByAccountNumber(int accountNumber);
+
 	public List<Customer> getCustomer(String customerName);
 	public boolean isCustomerExists(int customerId);
 	public List<Customer> getbalanceRange(int minimum,int maximum);

@@ -90,4 +90,12 @@ public class CustomerDAOImpl implements CustomerDAO {
 			.getResultList();
 	}
 
+	@Override
+	public Customer getCustomerByAccountNumber(int accountNumber) {
+
+		return entityManager.createNamedQuery("Customer_FindByAccNumber",Customer.class)
+				.setParameter("accNumber", accountNumber)
+				.getSingleResult();
+	}
+
 }

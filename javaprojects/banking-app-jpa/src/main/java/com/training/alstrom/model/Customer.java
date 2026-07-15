@@ -5,10 +5,13 @@ import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Table(name = "customers")
 @Entity
+@NamedQuery(name = "Customer_FindByAccNumber", 
+			query = "from Customer where accountNumber = :accNumber")
 public class Customer {
 
 	@Id
