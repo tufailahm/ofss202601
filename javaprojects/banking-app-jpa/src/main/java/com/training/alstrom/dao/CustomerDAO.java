@@ -13,7 +13,9 @@ public interface CustomerDAO {
 	public Customer getCustomer(int customerId);
 	public List<Customer> getCustomer(String customerName);
 	public boolean isCustomerExists(int customerId);
-
+	public List<Customer> getbalanceRange(int minimum,int maximum);
+	
+	
 	public int transfer(int fromCustomerId, int toCustomerId, int amount);
 
 }

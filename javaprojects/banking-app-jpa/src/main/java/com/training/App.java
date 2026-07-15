@@ -27,6 +27,7 @@ public class App {
 			System.out.println("5. Search Customer by name");
 			System.out.println("6. Search Customer by id");
 			System.out.println("7. Search Customer by mobileNumber");
+			System.out.println("8. Search Customer by balance range");
 
 			System.out.println("0. Exit");
 			System.out.print("Enter Choice : ");
@@ -55,13 +56,10 @@ public class App {
 
 				System.out.print("Enter Balance : ");
 				customer.setBalance(sc.nextInt());
-				
-				
-				if(customerDAO.isCustomerExists(customer.getCustomerId()))
-				{
+
+				if (customerDAO.isCustomerExists(customer.getCustomerId())) {
 					System.out.println("Customer already exists with this id");
-				}
-				else {
+				} else {
 					customerDAO.saveCustomer(customer);
 					System.out.println("Congrats for opening the account in our bank. You are few luckly ones");
 				}
@@ -69,7 +67,7 @@ public class App {
 				break;
 
 			case 2:
-				System.out.println("All the customers :\n"+customerDAO.getCustomer());
+				System.out.println("All the customers :\n" + customerDAO.getCustomer());
 				break;
 
 			case 3:
@@ -90,12 +88,9 @@ public class App {
 				System.out.println("Enter customer name to find : ");
 				String custName = sc.next();
 				List<Customer> results = customerDAO.getCustomer(custName);
-				if(results.size() ==0 )
-				{
+				if (results.size() == 0) {
 					System.out.println("No search result");
-				}
-				else
-				{
+				} else {
 					System.out.println(results);
 				}
 				break;
@@ -104,6 +99,15 @@ public class App {
 				System.out.println("Thank You...");
 				break;
 
+			case 8:
+				System.out.println("Enter minium salary :");
+				int minimum = sc.nextInt();
+				System.out.println("Enter maximum salary :");
+				int maximum = sc.nextInt();
+
+				List<Customer> customers = customerDAO.getbalanceRange(minimum, maximum);
+				System.out.println(customers);
+				break;
 			default:
 				System.out.println("Invalid Choice.");
 			}

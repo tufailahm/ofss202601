@@ -2005,16 +2005,69 @@ M E N U
 	1. Add a customer
 	2. 
 
+JPQL
+-------
 
 
 
+Customer customer = em.createQuery(
+        "SELECT c FROM Customer c WHERE c.customerId = :id",
+        Customer.class)
+        .setParameter("id", 101)
+        .getSingleResult();
+
+
+List<Customer> customers = em.createQuery(
+        "SELECT c FROM Customer c WHERE c.customerName = :name",
+        Customer.class)
+        .setParameter("name", "John")
+        .getResultList();
+
+
+List<Customer> customers = em.createQuery(
+        "SELECT c FROM Customer c WHERE c.balance > :bal",
+        Customer.class)
+        .setParameter("bal", 10000)
+        .getResultList();
+
+UPDATE using JPQL
+
+em.createQuery(
+    "UPDATE Customer c SET c.balance = :bal WHERE c.customerId = :id")
+    .setParameter("bal", 50000)
+    .setParameter("id", 101)
+    .executeUpdate();
+
+DELETE using JPQL
+em.createQuery(
+    "DELETE FROM Customer c WHERE c.customerId = :id")
+    .setParameter("id", 101)
+    .executeUpdate();
+
+
+count
+-----------
+
+Long count = em.createQuery(
+        "SELECT COUNT(c) FROM Customer c",
+        Long.class)
+        .getSingleResult();
+
+System.out.println(count);
+
+--order by
+List<Customer> customers = em.createQuery(
+        "SELECT c FROM Customer c ORDER BY c.balance DESC",
+        Customer.class)
+        .getResultList();
 
 
 
+--BETWEEN
 
-
-
-
-
-
-
+List<Customer> customers = em.createQuery(
+        "SELECT c FROM Customer c WHERE c.balance BETWEEN :min AND :max",
+        Customer.class)
+        .setParameter("min", 10000)
+        .setParameter("max", 50000)
+        .getResultList();

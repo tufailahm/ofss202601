@@ -82,4 +82,12 @@ public class CustomerDAOImpl implements CustomerDAO {
 		
 	}
 
+	@Override
+	public List<Customer> getbalanceRange(int minimum, int maximum) {
+			return entityManager.createQuery("select c from Customer c where c.balance between :min and :max",Customer.class)
+			.setParameter("min", minimum)
+			.setParameter("max", maximum)
+			.getResultList();
+	}
+
 }
