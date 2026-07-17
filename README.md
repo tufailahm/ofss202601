@@ -2,18 +2,6 @@
 
 https://codeshare.io/test1
 
-
-To access OU SGD, navigate to http://ouconnect.oracle.com.
-Select Log in link.
-Enter in user name: 98595274.user01 ... 98595274.userxx
-Enter in password: Mtm1GDr7iO (same for all users)
-Once connected, follow the lab exercises provided in the e-kit.
-
-
-
-
-
-
 PATH
 
 
@@ -3500,6 +3488,128 @@ public class TestEmployee {
 		System.out.println("Employee saved");
 	}
 }
+
+
+
+Weblogic
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--- Domain	- highest level entity
+	--- Admin Server		- manages the web logic 
+	--- Managed Server		-- manages the requests/serves the request
+
+
+
+	localhost:7001/hello-app	--> request	WSL
+
+
+
+What is role of web logic server in JDBC ?
+We create DSN ( data source name )/JNDI in wsl and use in our app.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+weblogic
+weblogic@123
+
+
+
+localhost: 7001		- AdminServer	-- start
+server1  :7003		- server1
+server2  :7004		- server2
+
+
+machine1	 : 5556
+
+
+configuration
+H:\Oracle\Middleware\Oracle_Home\oracle_common\common\bin
+
+
+start weblogic
+H:\Oracle\Middleware\Oracle_Home\user_projects\domains\base_domain\startWebLogic.cmd
+
+start weblogic managed server
+H:\Oracle\Middleware\Oracle_Home\user_projects\domains\base_domain\sartManagedWebLogic.cmd server1 http://localhost:7001
+
+H:\Oracle\Middleware\Oracle_Home\user_projects\domains\base_domain\bin>startManagedWebLogic.cmd server2 http://localhost:7001
+
+
+
+Node Manager
+---------------------
+Deploy Application
+-------------------------
+Clustering
+
+
+
+Use case : 
+
+Step 1: start web logic server
+H:\Oracle\Middleware\Oracle_Home\user_projects\domains\base_domain\startWebLogic.cmd
+
+7001
+
+
+Step 2: 
+
+H:\Oracle\Middleware\Oracle_Home\user_projects\domains\base_domain\bin\startNodeManager.cmd
+5556
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
